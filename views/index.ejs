@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body class="bg-light" style="font-family: Helvetica, Arial, sans-serif;">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+            <a class="btn btn-link shadow-sm mt-3 bg-white" href="/add">Continue Story</a>
+            <hr>
+            <% docs.forEach(function(doc) { %>
+            <div class="row justify-content-center mt-2 mb-2">
+                <div class="col-md-10 shadow-sm bg-white">
+                    <div class="text-body mt-1 mb-1" id="content"><%- doc.post.text %> </div>
+                    <hr class="m-0">
+                    <p class="text-muted mt-1 mb-1 text-right"><i>By: <%= doc.post.name %> </i></p>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-3 fixed-bottom">
+        <img src="infinity.png" class="img-fluid" alt="logo">
+        <p class="h1 m-0">.stories</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+</body>
+
+</html>
