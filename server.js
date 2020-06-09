@@ -3,7 +3,7 @@ const path = require("path");
 const http = require("http");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-//require("dotenv").config();
+require("dotenv").config();
 var favicon = require("serve-favicon");
 const postRouter = require("./routes/posts");
 
@@ -20,7 +20,7 @@ app.use(express.static(__dirname + "/static"));
 app.use(favicon(__dirname + "/static/brand.png"));
 
 const server = http.createServer(app);
-/*
+
 mongoose
   .connect(
     `mongodb+srv://${process.env.USER}:${process.env.PASS}@development-zqlw2.mongodb.net/stories?retryWrites=true&w=majority`,
@@ -32,18 +32,17 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-*/
-mongoose
-  .connect("mongodb://localhost:27017/stories", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Connected to local DB");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// mongoose
+//   .connect("mongodb://localhost:27017/stories", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => {
+//     console.log("Connected to local DB");
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
 app.use("/", postRouter);
 

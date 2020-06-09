@@ -10,7 +10,11 @@
 </head>
 
 <body class="bg-light" style="font-family: Helvetica, Arial, sans-serif;">
-    <div class="row justify-content-center mt-3">
+    <div class="row justify-content-center mb-3 fixed-top">
+        <img src="infinity.png" class="img-fluid" alt="logo">
+        <p class="h1 m-0">.stories</p>
+    </div>
+    <div class="row justify-content-center mt-5">
         <div class="col-md-8">
             <a class="btn btn-link shadow-sm mt-3 bg-white" href="/add">Continue Story</a>
             <hr>
@@ -19,16 +23,12 @@
                 <div class="col-md-10 shadow-sm bg-white">
                     <div class="text-body mt-1 mb-1" id="content"><%- doc.post.text %> </div>
                     <hr class="m-0">
-                    <p class="text-muted mt-1 mb-1 text-right"><i>By: <%= doc.post.name %> </i></p>
+                    <p class="text-muted mt-1 mb-1 text-right"><i>By: <%= doc.post.name %>. Next is
+                            <%= doc.post.turn %>'s turn!</i></p>
                 </div>
             </div>
             <% }) %>
         </div>
-    </div>
-
-    <div class="row justify-content-center mb-3 fixed-bottom">
-        <img src="infinity.png" class="img-fluid" alt="logo">
-        <p class="h1 m-0">.stories</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"

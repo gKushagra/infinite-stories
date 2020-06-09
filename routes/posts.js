@@ -46,12 +46,23 @@ router.post("/", (req, res) => {
     });
   }
 
+  var turn = "";
+
+  if (req.body.name === "Damini") {
+    turn = "Kushagra";
+  } else if (req.body.name === "Kushagra") {
+    turn = "Damini";
+  }
+
   const post = new Post({
     post: {
       name: req.body.name,
       text: req.body.editor,
+      turn: turn,
     },
   });
+
+  // console.log(turn);
 
   post.save().then((result) => {
     // console.log(result);

@@ -4,6 +4,7 @@ const postSchema = mongoose.Schema({
   post: {
     name: String,
     text: String,
+    turn: String,
   },
 });
 
