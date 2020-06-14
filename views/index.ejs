@@ -5,22 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= pageTitle %></title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        .app-name {
+            font-size: 2rem;
+            letter-spacing: 0.25rem;
+        }
+
+        .continue-btn {
+            color: blue;
+        }
+
+        .continue-btn:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fade {
+            animation: fade-in 1s 0.5s forwards;
+        }
+    </style>
 </head>
 
-<body class="bg-light" style="font-family: Helvetica, Arial, sans-serif;">
-    <div class="row justify-content-center mb-3 fixed-top">
+<body class="bg-light p-1" style="font-family: 'Manrope', sans-serif;">
+    <div class="row justify-content-center mb-3 ml-1 mr-1 bg-light fixed-top">
         <img src="infinity.png" class="img-fluid" alt="logo">
-        <p class="h1 m-0">.stories</p>
+        <p class="ml-3 mt-0 mb-0 app-name">stories</p>
     </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-8">
-            <a class="btn btn-link shadow-sm mt-3 bg-white" href="/add">Continue Story</a>
+    <div class="row justify-content-center mt-5 ml-1 mr-1 story-div">
+        <div class="col-8 col-sm-8 col-md-8">
+            <a class="btn btn-link shadow-sm mt-3 bg-white continue-btn" href="/add">Continue Story</a>
             <hr>
             <% docs.forEach(function(doc) { %>
             <div class="row justify-content-center mt-2 mb-2">
-                <div class="col-md-10 shadow-sm bg-white">
+                <div class="col-10 col-sm-10 col-md-10 shadow-sm bg-white rounded-lg">
                     <div class="text-body mt-1 mb-1" id="content"><%- doc.post.text %> </div>
                     <hr class="m-0">
                     <p class="text-muted mt-1 mb-1 text-right"><i>By: <%= doc.post.name %>. Next is
@@ -37,6 +67,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script>
+        window.onload(document.querySelector('.story-div').classList.add('fade'));
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }

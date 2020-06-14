@@ -5,24 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= pageTitle %> </title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        .back-btn {
+            color: blue;
+        }
+
+        .back-btn:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        .select-dropdown {
+            width: 25%;
+        }
+
+        @media (max-width: 576px) {
+            .select-dropdown {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-light" style="font-family: Helvetica, Arial, sans-serif;">
+<body class="bg-light" style="font-family: 'Manrope', sans-serif;">
     <div class="row justify-content-center" style="min-width: 100; min-height: 25px;">
-        <div class="col-md-7">
-            <a class="btn btn-link shadow-sm mt-3 bg-white" href="/">Back</a>
+        <div class="col-11 col-sm-11 col-md-7">
+            <a class="btn btn-link shadow-sm mt-3 bg-white back-btn" href="/">Back</a>
             <hr>
         </div>
     </div>
     <div class="row justify-content-center mt-2">
-        <div class="col-md-6 shadow-sm bg-white">
+        <div class="col-10 col-sm-10 col-md-6 shadow-sm bg-white rounded-lg">
             <form action="/" method="POST">
                 <div class="form-group mt-2 mb-2">
                     <!-- <input type="text" class="form-control" placeholder="Enter your name" name="name"
                         id="nameY"></input> -->
-                    <select class="form-control" id="sel1" placeholder="Enter your name" name="name">
+                    <select class="form-control select-dropdown" id="sel1" placeholder="Enter your name" name="name">
                         <option>Damini</option>
                         <option>Kushagra</option>
                     </select>
@@ -35,7 +56,7 @@
             </form>
         </div>
     </div>
-    <div class="row justify-content-center fixed-bottom mb-3">
+    <div class="row justify-content-center mt-3 mb-3">
         <img src="infinity.png" class="img-fluid" alt="logo">
         <!-- <p class="h1 m-0"> .infinite_stories</p> -->
     </div>
