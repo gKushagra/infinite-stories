@@ -48,10 +48,10 @@ router.post("/", (req, res) => {
 
   var turn = "";
 
-  if (req.body.name === "Damini") {
+  if (req.body.name === "Naman") {
     turn = "Kushagra";
   } else if (req.body.name === "Kushagra") {
-    turn = "Damini";
+    turn = "Naman";
   }
 
   const post = new Post({

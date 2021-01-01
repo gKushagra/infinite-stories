@@ -21,28 +21,28 @@ app.use(favicon(__dirname + "/static/brand.png"));
 
 const server = http.createServer(app);
 
-mongoose
-  .connect(
-    `mongodb+srv://${process.env.USER}:${process.env.PASS}@development-zqlw2.mongodb.net/stories?retryWrites=true&w=majority`,
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
-  .then(() => {
-    console.log("Connected to database");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 // mongoose
-//   .connect("mongodb://localhost:27017/stories", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
+//   .connect(
+//     `mongodb+srv://${process.env.USER}:${process.env.PASS}@development-zqlw2.mongodb.net/stories?retryWrites=true&w=majority`,
+//     { useNewUrlParser: true, useUnifiedTopology: true }
+//   )
 //   .then(() => {
-//     console.log("Connected to local DB");
+//     console.log("Connected to database");
 //   })
 //   .catch((err) => {
 //     console.log(err);
 //   });
+mongoose
+  .connect("mongodb://localhost:27017/stories", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to local DB");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.use("/", postRouter);
 
