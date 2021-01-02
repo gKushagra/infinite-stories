@@ -21,7 +21,7 @@ app.use(favicon(__dirname + "/static/brand.png"));
 
 const server = http.createServer(app);
 
-console.log(`mongodb://${process.env.USER}:${encodeURIComponent(process.env.PASS)}@${process.env.HOST}:${process.env.PORT}/${process.env.DB}`);
+// console.log(`mongodb://${process.env.USER}:${encodeURIComponent(process.env.PASS)}@${process.env.HOST}:${process.env.PORT}/${process.env.DB}`);
 
 mongoose
   .connect(
