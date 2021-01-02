@@ -29,6 +29,7 @@ router.get("/", (req, res) => {
     }
 
     if (err) {
+      console.log(err);
       return res.status(400).json({
         error: err,
       });
